@@ -10,16 +10,16 @@ form.addEventListener('submit',(event)=>{
     const password = document.getElementById('password').value.trim()
 
     let isValid = true
-    const message = []
+    const messages = []
 
     if(username.length < 3){
         isValid = false
-        message.push('User name must be longer than 3 characters.')
+        messages.push('User name must be longer than 3 characters.')
     }
 
     if(password.length < 8){
         isValid = false
-        message.push('password must be at least 8 characters long')
+        messages.push('password must be at least 8 characters long')
     }
     feedbackDiv.style.display = 'block'
     if(isValid){
@@ -30,7 +30,7 @@ form.addEventListener('submit',(event)=>{
         
         
     }else{
-        const result = message.join('<br>')
+        const result = messages.join('<br>')
         feedbackDiv.innerHTML = result
         feedbackDiv.style.color = '#dc3545'
         console.log(result)
