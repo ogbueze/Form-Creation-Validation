@@ -21,6 +21,11 @@ form.addEventListener('submit',(event)=>{
         isValid = false
         messages.push('password must be at least 8 characters long')
     }
+
+    if(!email.includes('@')){
+        isValid = false
+        messages.push('invalid email address')
+    }
     feedbackDiv.style.display = 'block'
     if(isValid){
         feedbackDiv.textContent = 'Registration successful!'
